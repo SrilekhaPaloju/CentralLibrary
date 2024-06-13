@@ -2,3 +2,10 @@
 .button{
     flex-wrap: wrap;
 }
+.sample{
+    background-image: url("https://static.vecteezy.com/system/resources/previews/001/925/938/large_2x/library-education-concept-free-vector.jpg");
+    background-size: 50% 50%;
+    background-repeat: no-repeat;
+    background-position: center;  
+    background-position: center;
+}

@@ -161,6 +161,7 @@ sap.ui.define([
                     duedate: formattedDateAfter20Days,
                     loandate: formattedDate,
                     Active: true,
+                    notify: `Your reserved book title "${oSelectedBook.title}" is issued`,
 
 
                 });

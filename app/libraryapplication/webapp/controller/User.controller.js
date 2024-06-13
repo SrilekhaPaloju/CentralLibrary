@@ -42,6 +42,21 @@ sap.ui.define([
             oRouter.navTo("RouteAllBooks", {
                 id: userID,
             });
-        }
+        },
+        onNotificationPress: async function () {
+            if (!this.oNotificationDialog) {
+                this.oNotificationDialog = await this.loadFragment("Notification"); // Load your fragment asynchronously
+            }
+            this.oNotificationDialog.open();
+            const oObjectPage = this.getView().byId("idDialogNotify");
+            this.getView().byId("idDialogNotify").getBinding("items").refresh()
+
+            oObjectPage.bindElement(`/Users(${this.ID})`);
+        },
+        onCloseNotification: function () {
+            if (this.oNotificationDialog.isOpen()) {
+                this.oNotificationDialog.close();
+            }
+        },
     });
 });

@@ -57,7 +57,7 @@
             </HBox> -->
             <Label
                     id="idISBNLabel_"
-                    text="ISBN"
+                    text="Book ID"
                 />
                 <Input
                     id="idISBNIDInput"

@@ -21,6 +21,14 @@
                         text="User Dashboard"
                     />
                 </f:heading>
+                <f:actions >
+                <Button id="bellButton"  class="sapUiSmallMarginEnd"
+                icon="sap-icon://bell"
+                tooltip="Notifications"
+                type="Transparent"
+                press="onNotificationPress" />
+                
+                </f:actions>
             </f:DynamicPageTitle>
         </f:title>
         <f:header>

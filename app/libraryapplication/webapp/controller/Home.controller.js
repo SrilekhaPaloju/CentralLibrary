@@ -27,54 +27,6 @@ sap.ui.define([
                 this.getView().setModel(oLocalModel, "localModel");
 
             },
-            // onPress: function () {
-            //     var oView = this.getView();
-                
-            //     var sUserName = oView.byId("_IDLoginGenInput").getValue();
-            //     var sPassword = oView.byId("_IDGenLoginInput1").getValue();
-
-            //     if (!sUserName || !sPassword) {
-            //         MessageToast.show("please enter required Credentials");
-            //         return;
-            //     }
-
-            //     var oModel = this.getView().getModel();
-            //     var oBinding = oModel.bindList("/Users");
-
-            //     oBinding.filter([
-            //         new Filter("username", FilterOperator.EQ, sUserName),
-            //         new Filter("password", FilterOperator.EQ, sPassword)
-            //     ]);
-
-            //     oBinding.requestContexts().then(function (aContexts) {  //requestContexts is called to get the contexts (matching records) from the backend.
-            //         debugger
-            //         if (aContexts.length > 0) {
-            //             var ID = aContexts[0].getObject().ID;
-            //             var userType = aContexts[0].getObject().usertype;
-            //             if (userType === "Admin") {
-            //                 sap.m.MessageToast.show("Login Successful");
-            //                 var oRouter = this.getOwnerComponent().getRouter();
-            //                 oRouter.navTo("RouteDetails", { userId: ID });
-            //                 var oView = this.getView()
-            //                 oView.byId("_IDLoginGenInput").setValue("");
-            //                 oView.byId("_IDLoginGenInput1").setValue("");
-            //             }
-            //             else {
-            //                 sap.m.MessageToast.show("Login Successful");
-            //                 var oRouter = this.getOwnerComponent().getRouter();
-            //                 oRouter.navTo("RouteUser", { userId: ID });
-            //                 var oView = this.getView()
-            //                 oView.byId("_IDLoginGenInput").setValue("");
-            //                 oView.byId("_IDLoginGenInput1").setValue("");
-            //             }
-
-            //         } else {
-            //             sap.m.MessageToast.show("Invalid username or password.");
-            //         }
-            //     }.bind(this)).catch(function () {
-            //         sap.m.MessageToast.show("An error occurred during login.");
-            //     });
-            //},
             onSignUpButton: async function(){
                 if (!this.oSignUpDialog) {
                     this.oSignUpDialog = await this.loadFragment("SignUp")
@@ -227,7 +179,7 @@ sap.ui.define([
                             oRouter.navTo("RouteDetails", { userId: ID });
                                            var oView = this.getView()
                                            oView.byId("_IDLoginGenInput").setValue("");
-                                            oView.byId("_IDLoginGenInput1").setValue("");
+                                            oView.byId("_IDGenLoginInput1").setValue("");
                             
                         }
                         else {
@@ -235,7 +187,7 @@ sap.ui.define([
                             oRouter.navTo("RouteUser", { userId: ID });
                                             var oView = this.getView()
                                             oView.byId("_IDLoginGenInput").setValue("");
-                                             oView.byId("_IDLoginGenInput1").setValue("");
+                                             oView.byId("_IDGenLoginInput1").setValue("");
                         }
                     } else {
                         MessageToast.show("Invalid username or password.")
