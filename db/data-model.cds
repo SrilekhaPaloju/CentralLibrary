@@ -25,7 +25,6 @@ entity Users {
         email         : String;
         usertype      : String;
         phoneNumber   : String;
-        user_loans    : Composition of many Activeloans on user_loans.user = $self;
         bookLoans     : Composition of many BooksLoan on bookLoans.users = $self;
         books         : Association to Books;
 
@@ -49,8 +48,3 @@ entity Reservation {
         resevedate    : Date;
 }
 
-entity Activeloans : cuid {
-    user    : Association to Users;
-    dueDate : Date;
-
-}

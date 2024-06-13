@@ -5,6 +5,5 @@ service CatalogService {
    entity Users as projection on my.Users;
    entity BooksLoan as projection on my.BooksLoan;
    entity Reservation as projection on my.Reservation;
-   entity Activeloans as projection on my.Activeloans;
    } 
 
