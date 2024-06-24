@@ -1,0 +1,115 @@
+<core:FragmentDefinition
+    xmlns:core="sap.ui.core"
+    xmlns="sap.m"
+    xmlns:form="sap.ui.layout.form"
+>
+    <Dialog
+        id="idActiveLoansDailog"
+        resizable="true"
+        draggable="true"
+        contentWidth="85%"
+        contentHeight="85%"
+        title="Active Loans"
+    >
+        <content>
+            <Table
+                id="idLoanTable"
+                inset="false"
+                mode="MultiSelect"
+                items="{/BooksLoan}"
+            >
+                <headerToolbar>
+                    <Toolbar id="idToolBar">
+                        <ToolbarSpacer id="idSpacerButtons" />
+                        <Button
+                            id="iddeleteBtn"
+                            text="Close Loan"
+                            press="onDeleteActiveLoans"
+                            type="Negative"
+                            icon="sap-icon://delete"
+                            tooltip="Delete"
+                        />
+                        <Button
+                            id="idCloseLoanBTN"
+                            text="close"
+                            press="onCloseActiveLoans"
+                        />
+                    </Toolbar>
+                </headerToolbar>
+                <columns>
+                    <Column id="ididColumn">
+                        <Title
+                            id="ididtitle"
+                            text="BooksLoanId"
+                        />
+                    </Column>
+                    <Column id="idUserColumn">
+                        <Title
+                            id="idUsertitle"
+                            text="UserID"
+                        />
+                    </Column>
+                    <Column id="idUserNameColumn">
+                        <Title
+                            id="idUserNametitle"
+                            text="UserName"
+                        />
+                    </Column>
+                    <Column id="idBooksColumn">
+                        <Title
+                            id="idBookstitle"
+                            text="BooksISBN"
+                        />
+                    </Column>
+
+                    <Column id="iddueColumn">
+                        <Title
+                            id="idduetitle"
+                            text="Duedate"
+                        />
+                    </Column>
+                    <Column id="idbodColumn">
+                        <Title
+                            id="idbodtitle"
+                            text="LoanDatee"
+                        />
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem id="idColumnListBooksLoan">
+                        <cells>
+                            <Text
+                                id="idBISBNvalue"
+                                text="{ID}"
+                            />
+                            <Text
+                                id="idBUservalue"
+                                text="{users/ID}"
+                            />
+                            <Text
+                                id="idBUserNamevalue"
+                                text="{users/username}"
+                            />
+                            <Text
+                                id="idBdatevalue"
+                                text="{books/ISBN}"
+                            />
+                            <Text
+                                id="idbodvalue"
+                                text="{duedate}"
+                            />
+                            <Text
+                                id="idduevalue"
+                                text="{loandate}"
+                            />
+                            <Text
+                                id="idavl_stovalue"
+                                text="{books/AvailableQuantity}"
+                            />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+    </Dialog>
+</core:FragmentDefinition>

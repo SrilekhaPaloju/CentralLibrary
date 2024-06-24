@@ -16,7 +16,7 @@ sap.ui.define([
             const oRouter = this.getOwnerComponent().getRouter();
             oRouter.attachRoutePatternMatched(this.onCurrentUserDetails, this);
 
-        },
+        },  
         onCurrentUserDetails: function (oEvent) {
             const { userId } = oEvent.getParameter("arguments");
             this.ID = userId;

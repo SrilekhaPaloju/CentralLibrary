@@ -2,6 +2,10 @@ namespace my.bookshop;
 
 using {cuid} from '@sap/cds/common';
 
+
+@assert.unique: {
+    ISBN:[ISBN],
+}
 entity Books : cuid {
     ISBN              : String;
     title             : String;
@@ -10,11 +14,11 @@ entity Books : cuid {
     AvailableQuantity : Integer;
     genre             : String;
     status            : String;
-    loans             : Association to many BooksLoan;
+    loans             : Association to BooksLoan;
     reservations      : Composition of many Reservation
                             on reservations.bookID = $self;
-    userss            : Composition of many Users
-                            on userss.books = $self;
+    users           : Composition of many Users
+                            on users.books = $self;
 
 }
 
